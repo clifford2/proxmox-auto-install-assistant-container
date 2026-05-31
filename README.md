@@ -1,5 +1,25 @@
-[jamestalmage/proxmox-auto-install-assistant](https://github.com/jamestalmage/proxmox-auto-install-assistant-container) 
---------------------------------------------
+# Container Image for proxmox-auto-install-assistant
+
+Provides a Debian base image with [proxmox-auto-install-assistant](https://pve.proxmox.com/wiki/Automated_Installation#Assistant_Tool) installed.
+
+This is a fork of James Talmage's code
+([jamestalmage/proxmox-auto-install-assistant](https://github.com/jamestalmage/proxmox-auto-install-assistant-container)),
+with a `Containerfile` added for use by **podman**.
+James' `Dockerfile` uses `RUN` heredocs, which aren't well supported / documented in all current versions of podman yet (as of 2026-05-31 / my podman 4.9.3).
+
+Build your image with something like this:
+
+```sh
+podman build --pull -f Containerfile -t proxmox-auto-install-assistant:$(date +%Y%m%d) .
+```
+
+Last tested on 2026-05-30, with Debian 13.5 and proxmox-auto-install-assistant 9.2.5.
+
+---
+
+# * James' Original README*
+
+[jamestalmage/proxmox-auto-install-assistant](https://github.com/jamestalmage/proxmox-auto-install-assistant-container)
 
 Provides a Debian base image with [proxmox-auto-install-assistant](https://pve.proxmox.com/wiki/Automated_Installation#Assistant_Tool) installed.
 
@@ -33,7 +53,7 @@ proxmox-auto-install-assistant prepare-iso --fetch-from http "proxmox.iso" --url
 
 ##### Modify an ISO (in shell using separate steps)
 
-This is useful if you think the wrapper is what is causing issues 
+This is useful if you think the wrapper is what is causing issues
 
 ```shell
 # The first step emits a file called proxmox-1.iso
