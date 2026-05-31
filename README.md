@@ -15,9 +15,11 @@ podman build --pull -f Containerfile -t proxmox-auto-install-assistant:$(date +%
 
 Last tested on 2026-05-30, with Debian 13.5 and proxmox-auto-install-assistant 9.2.5.
 
+See <https://pve.proxmox.com/wiki/Automated_Installation> for information on how to to create answer files.
+
 ---
 
-# * James' Original README*
+# *James' Original README*
 
 [jamestalmage/proxmox-auto-install-assistant](https://github.com/jamestalmage/proxmox-auto-install-assistant-container)
 
